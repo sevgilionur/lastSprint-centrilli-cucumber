@@ -11,7 +11,7 @@ public class RepairPage_Burak {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(css = "a[data-menu='347'] span")
+    @FindBy(xpath = "//*[@data-menu-xmlid='mrp_repair.menu_repair_order']/*[@class='oe_menu_text']")
     public WebElement repairButton;
 
 
