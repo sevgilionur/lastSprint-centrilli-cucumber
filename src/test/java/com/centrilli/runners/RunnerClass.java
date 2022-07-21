@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/centrilli/step_definitions",
-        dryRun = true,
-        tags = "",
+        dryRun = false,
+        tags = "@onur",
         publish = true
 )
 
