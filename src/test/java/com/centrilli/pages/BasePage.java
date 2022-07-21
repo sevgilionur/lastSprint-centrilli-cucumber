@@ -20,9 +20,4 @@ public class BasePage {
     @FindBy(css = ".btn-primary")
     public WebElement loginButton;
 
-    public void enterCredentials(String email, String password) {
-        this.email.sendKeys(email);
-        this.password.sendKeys(password);
-    }
-
 }

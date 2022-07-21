@@ -11,9 +11,9 @@ public class Login_StepDefinitions {
 
     @Given("User goes to application page and enter valid credentials")
     public void user_goes_to_application_page_and_enter_valid_credentials() {
+
         Driver.getDriver().get(PropertyReader.getProperty("url"));
-        loginPage.email.sendKeys(PropertyReader.getProperty("email"));
-        loginPage.password.sendKeys(PropertyReader.getProperty("password"));
-        loginPage.loginButton.click();
+        loginPage.enterCredentials(PropertyReader.getProperty("email"),
+                PropertyReader.getProperty("password"));
     }
 }
