@@ -1,13 +1,11 @@
 package com.centrilli.step_definitions;
 
-import com.centrilli.pages.RepairPage_Onur;
 import com.centrilli.pages.RepairPage_Yahya;
 import com.centrilli.utilities.Driver;
 import com.centrilli.utilities.Utilities;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.support.ui.Wait;
 
 import static org.junit.Assert.*;
 
@@ -33,6 +31,7 @@ public class Repair_StepDefinitions_Yahya {
 
     @When("User clicks on the product on page")
     public void user_clicks_on_the_product_on_page() {
+        //repairPage_yahya.clicktoproduct(product);
         repairPage_yahya.productToEdit.click();
     }
 
@@ -55,4 +54,9 @@ public class Repair_StepDefinitions_Yahya {
 
     }
 
+    @And("User clicks on the {string} on page")
+    public void userClicksOnTheOnPage(String product) throws InterruptedException {
+        repairPage_yahya.clicktoproduct(product);
+        Thread.sleep(3000);
+    }
 }

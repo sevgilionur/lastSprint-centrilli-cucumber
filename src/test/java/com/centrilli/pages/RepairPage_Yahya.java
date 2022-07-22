@@ -1,16 +1,27 @@
 package com.centrilli.pages;
 
 import com.centrilli.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RepairPage_Yahya {
-    public RepairPage_Yahya(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public RepairPage_Yahya() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
+    String str = "asdsa";
     @FindBy(xpath = "//*[.='RMA/00403']")
     public WebElement productToEdit;
+
+    public void clicktoproduct(String product) {
+        String searchProduct = product;
+        String xpath = "//*[.='" + searchProduct + "']";
+        Driver.getDriver().findElement(By.xpath(xpath)).click();
+
+    }
+
 
     @FindBy(xpath = "//*[@id=\"oe_main_menu_navbar\"]/div[2]/ul[1]/li[12]/a")
     public WebElement repairButton;
@@ -32,8 +43,6 @@ public class RepairPage_Yahya {
 
     @FindBy(xpath = "//span[@name='product_qty']")
     public WebElement productQuantityInfo;
-
-
 
 
 }
