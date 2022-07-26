@@ -38,6 +38,17 @@ public class RepairPage_Murat extends BasePage {
     @FindBy(xpath = "//button[@class=\'btn btn-primary btn-sm o_form_button_save\']")
     public WebElement saveButton;
 
+    @FindBy(xpath = "//button[@accesskey='c']")
+    public WebElement createButton;
+
+    @FindBy(xpath = "//input[@name='name']")
+    public WebElement repairReferenceBox;
+
+    @FindBy(xpath = "//button[normalize-space(text()) = 'Create']")
+    public WebElement createButton2;
+
+
+
 
 
 
