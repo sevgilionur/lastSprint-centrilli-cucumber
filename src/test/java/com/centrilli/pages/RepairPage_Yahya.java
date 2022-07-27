@@ -33,6 +33,42 @@ public class RepairPage_Yahya {
     @FindBy(xpath = "//span[@name='product_qty']")
     public WebElement productQuantityInfo;
 
+    /** REPAIR REFERENCE PAGES ELEMENTS BELOW
+     **/
+    @FindBy(xpath = "//input[@id='o_field_input_2354']")
+    public WebElement productTorepairDDbutton;
+
+    @FindBy(xpath = "//li[contains(.,'[2875] test')]")
+    public WebElement ProductTorepair1;
+
+    @FindBy(xpath = "//input[@id='o_field_input_2358']")
+    public WebElement customerDDbutton;
+
+    @FindBy(xpath = "//li[contains(., 'vmnzrz')]")
+    public WebElement customer;
+
+    @FindBy(xpath = "//select[@name='invoice_method']")
+    public WebElement invonceMethodDDbutton;
+
+    @FindBy(xpath = "//option[contains(@value, 'after_repair')]")
+    public WebElement invonceAfterRepair;
+
+    @FindBy(xpath = "//a[.='Add an item']")
+    public WebElement addAnItemButton;
+
+    @FindBy(xpath = "(//select[@class='o_input o_field_widget o_required_modifier'])[2]")
+    public WebElement typeDDbutton;
+
+    @FindBy(xpath = "//option[.='Add']")
+    public WebElement addbutton;
+
+    @FindBy(xpath = "//li[contains(., '[#440809]')]")
+    public WebElement productDDbutton;
+
+
+
+
+
 
 
 
