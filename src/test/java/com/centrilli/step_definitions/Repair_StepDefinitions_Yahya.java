@@ -72,6 +72,10 @@ public class Repair_StepDefinitions_Yahya extends RepairPage_Yahya {
     public void verify_that_user_succesfully_filled_the_fields() {
         Assert.assertNotEquals("0",totalAmount.getText());
     }
+    @When("User clicks on save button")
+    public void user_clicks_on_save_button() {
+       repairPage_yahya.saveButton.click();
+    }
 
 
 }
