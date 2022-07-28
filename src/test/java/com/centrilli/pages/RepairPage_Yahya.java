@@ -54,10 +54,10 @@ public class RepairPage_Yahya {
     @FindBy(xpath = "//li[contains(.,'[2875] test')]")
     public WebElement productTorepair1;
 
-    @FindBy(xpath = "//input[@id='o_field_input_2358']")
+    @FindBy(xpath = "(//input[@class='o_input ui-autocomplete-input'])[4]")
     public WebElement customerDDbutton;
 
-    @FindBy(xpath = "//li[contains(., 'vmnzrz')]")
+    @FindBy(xpath = "//li[contains(., 'AAAA VA')]")
     public WebElement customer;
 
     @FindBy(xpath = "//select[@name='invoice_method']")
@@ -75,8 +75,8 @@ public class RepairPage_Yahya {
     @FindBy(xpath = "//option[.='Add']")
     public WebElement addbutton;
 
-    @FindBy(xpath = "//li[contains(., '[#440809]')]")
-    public WebElement productDDbutton;
+    @FindBy(xpath = "(//li[contains(.,'[#440809]')])[2]")
+    public WebElement selectProductDown;
 
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_form_button_save']")
     public WebElement saveButton;
@@ -92,6 +92,14 @@ public class RepairPage_Yahya {
 
     @FindBy(xpath = "//span[@class='o_field_char o_field_widget o_required_modifier']")
     public WebElement createdOrderReference;
+
+    @FindBy(xpath = "(//input[@class='o_input ui-autocomplete-input'])[11]")
+    public WebElement productDDButtonDown;
+
+    @FindBy(xpath = "//span[@name='amount_total']")
+    public WebElement totalAmount;
+
+
 
 
 
@@ -141,5 +149,30 @@ public class RepairPage_Yahya {
                 .findElement(By.xpath
                                 ("//td[.='"+repairReference+"']"))
                 .isDisplayed());
+    }
+
+    public void fillTheRepairReference() {
+        productTorepairDDbutton.click();
+        productTorepair1.click();
+
+        customerDDbutton.click();
+        customer.click();
+        addAnItemButton.click();
+        typeDDbutton.click();
+        addbutton.click();
+        productDDButtonDown.click();
+
+        selectProductDown.click();
+
+        invonceMethodDDbutton.click();
+        invonceAfterRepair.click();
+
+
+        Assert.assertNotEquals("0",totalAmount.getText());
+
+
+
+
+
     }
 }

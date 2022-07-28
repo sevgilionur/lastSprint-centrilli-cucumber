@@ -25,8 +25,14 @@ Feature: Repair Module Functionality
   @yahya3
   Scenario: User can create a new Repair Order
     When User clicks on create button
-    And  User fills repair reference modules fields and click on save button
+    And  User fills minimal field and click on save button
     Then Verify that repair order is created
+
+  @yahya4
+  Scenario: User can fill in the Repair Order form
+    When User clicks on create button
+    And User fills the repair reference fields and click on save button
+
 
 
 

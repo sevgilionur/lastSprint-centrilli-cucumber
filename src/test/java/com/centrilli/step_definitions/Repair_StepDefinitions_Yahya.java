@@ -15,12 +15,7 @@ import static org.junit.Assert.*;
 
 public class Repair_StepDefinitions_Yahya extends RepairPage_Yahya {
 
-
-
     RepairPage_Yahya repairPage_yahya = new RepairPage_Yahya();
-
-
-
 
     @When("User clicks on repairs button yahya")
     public void user_clicks_on_repairs_button_yahya() {
@@ -33,7 +28,6 @@ public class Repair_StepDefinitions_Yahya extends RepairPage_Yahya {
         Utilities.waitForClickablility(repairPage_yahya.createButtonForProduct,3);
         assertEquals("Repair Orders - Odoo", Driver.getDriver().getTitle());
     }
-
 
     @When("User clicks on the product on page")
     public void user_clicks_on_the_product_on_page() {
@@ -48,13 +42,11 @@ public class Repair_StepDefinitions_Yahya extends RepairPage_Yahya {
     @When("User changes quantity of the order and save")
     public void user_changes_quantity_of_the_order() {
        repairPage_yahya.changeQuantity();
-
     }
 
     @Then("Verify that order has been edit successfully")
     public void verify_that_order_has_been_edit_successfully() {
         repairPage_yahya.orderEditverification();
-
     }
 
     @When("User clicks on create button")
@@ -63,22 +55,18 @@ public class Repair_StepDefinitions_Yahya extends RepairPage_Yahya {
         repairPage_yahya.createButtonForProduct.click();
     }
 
-    @When("User fills repair reference modules fields and click on save button")
-    public void user_fills_repair_reference_modules_fields_and_click_on_save_button() {
+    @When("User fills minimal field and click on save button")
+    public void user_fills_minimal_field_and_click_on_save_button() {
         repairPage_yahya.createOrder();
-    }
-
-
-
-    @Then("Verify that order is listed")
-    public void verify_that_order_is_listed() {
-
     }
 
     @Then("Verify that repair order is created")
     public void verify_that_repair_order_is_created() {
         repairPage_yahya.verificationOrderCreated();
-
+    }
+    @When("User fills the repair reference fields and click on save button")
+    public void user_fills_the_repair_reference_fields_and_click_on_save_button() {
+        repairPage_yahya.fillTheRepairReference();
     }
 
 }
