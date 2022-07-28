@@ -14,5 +14,6 @@ public class Login_StepDefinitions {
         Driver.getDriver().get(PropertyReader.getProperty("url"));
         loginPage.enterCredentials(PropertyReader.getProperty("email"),
                 PropertyReader.getProperty("password"));
+
     }
 }
