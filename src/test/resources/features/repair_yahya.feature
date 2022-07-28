@@ -31,7 +31,8 @@ Feature: Repair Module Functionality
   @yahya4
   Scenario: User can fill in the Repair Order form
     When User clicks on create button
-    And User fills the repair reference fields and click on save button
+    And User fills the repair reference fields
+    Then Verify that user succesfully filled the fields
 
 
 

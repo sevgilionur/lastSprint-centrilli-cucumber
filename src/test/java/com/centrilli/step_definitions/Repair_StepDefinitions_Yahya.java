@@ -64,9 +64,14 @@ public class Repair_StepDefinitions_Yahya extends RepairPage_Yahya {
     public void verify_that_repair_order_is_created() {
         repairPage_yahya.verificationOrderCreated();
     }
-    @When("User fills the repair reference fields and click on save button")
-    public void user_fills_the_repair_reference_fields_and_click_on_save_button() {
+    @When("User fills the repair reference fields")
+    public void user_fills_the_repair_reference_fields() {
         repairPage_yahya.fillTheRepairReference();
     }
+    @Then("Verify that user succesfully filled the fields")
+    public void verify_that_user_succesfully_filled_the_fields() {
+        Assert.assertNotEquals("0",totalAmount.getText());
+    }
+
 
 }
