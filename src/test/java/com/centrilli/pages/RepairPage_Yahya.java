@@ -168,7 +168,7 @@ public class RepairPage_Yahya {
         invonceAfterRepair.click();
 
 
-        Assert.assertNotEquals("0",totalAmount.getText());
+
 
 
 
