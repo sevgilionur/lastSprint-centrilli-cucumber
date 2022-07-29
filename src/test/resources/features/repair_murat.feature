@@ -30,6 +30,15 @@ Feature: Repair Module Functionality
       | product number | quantity |
       | 00500          | 173      |
 
+    @CNT-1308
     Scenario: User can create a new Repair Order_AC4
+      When user clicks Create Button_murat
+      And user clicks Product to Repair Box_murat
+      And user selects second product_murat
+      And user inputs "333" to Product Quantity Input Box_murat
+      And user clicks Save ButtonProduct Quantity Input Box_murat
+      Then Verify that a new repair order has been created_murat
+
+
 
 
