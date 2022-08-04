@@ -3,9 +3,11 @@ package com.centrilli.step_definitions;
 import com.centrilli.pages.RepairPage_Murat;
 import com.centrilli.utilities.Driver;
 import com.centrilli.utilities.Utilities;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 
 public class Repair_StepDefinitions_Murat {
 
@@ -62,13 +64,54 @@ public class Repair_StepDefinitions_Murat {
     public void verify_that_order_has_been_changed_to_new_successfully_murat(String newQuantity) {
         //Utilities.waitFor(3);
         Utilities.waitForVisibility(repairPage_murat.productQuantityDisplayBox,10);
+
         String expectedQuantity=newQuantity+".000";
         Utilities.waitForVisibility(repairPage_murat.productQuantityDisplayBox,10);
+
         Assert.assertEquals(expectedQuantity,repairPage_murat.productQuantityDisplayBox.getText());
 
     }
 
+    @When("user clicks Create Button_murat")
+    public void userClicksCreateButton_murat() {
+        repairPage_murat.createButton.click();
+        Utilities.waitFor(3);
+    }
 
+    @And("user clicks Product to Repair Box_murat")
+    public void userClicksProductToRepairBox_murat() {
+        repairPage_murat.productToRepairBox.click();
+        Utilities.waitFor(3);
+    }
 
+    @And("user selects second product_murat")
+    public void userSelectsSecondProduct_murat() {
+        // new Actions(Driver.getDriver()).click(repairPage_murat.firstProductInRepairBox).perform();
+        repairPage_murat.secondProductInRepairBox.click();
+        Utilities.waitFor(3);
+    }
 
+    @And("user inputs {string} to Product Quantity Input Box_murat")
+    public void userInputsToProductQuantityInputBox_murat(String quantity) {
+        repairPage_murat.productQuantityInputBox.clear();
+        Utilities.waitFor(3);
+        repairPage_murat.productQuantityInputBox.sendKeys(quantity);
+        Utilities.waitFor(3);
+    }
+
+    @And("user clicks Save ButtonProduct Quantity Input Box_murat")
+    public void userClicksSaveButtonProductQuantityInputBox_murat() {
+        repairPage_murat.saveButton.click();
+        Utilities.waitFor(3);
+    }
+
+    @Then("Verify that a new repair order has been created_murat")
+    public void verifyThatANewRepairOrderHasBeenCreated_murat() {
+        Assert.assertEquals("[///] iphone 8",repairPage_murat.secondProductInRepairDisplayBox.getText());
+        System.out.println("product assert ok");
+        Utilities.waitFor(3);
+
+        Assert.assertEquals(333+".000",repairPage_murat.productQuantityDisplayBox.getText());
+        System.out.println("quantity assert ok");
+    }
 }
